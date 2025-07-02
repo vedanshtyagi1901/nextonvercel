@@ -7,10 +7,10 @@ export default function Home() {
 
   const fetchMessage = async () => {
     try {
-      const res = await fetch('/api/login');
+      const res = await fetch('/api/login'); // ✅ route name matches
       const data = await res.json();
       setMessage(data.message);
-    } catch (err) {
+    } catch (_err) {
       setMessage('Failed to fetch message.');
     }
   };
